@@ -8,7 +8,7 @@ from .copyeditor import start
 from werkzeug.utils import secure_filename
 from docx.api import Document
 # from waitress import serve
-
+import os
 app = Flask(__name__)
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
@@ -17,7 +17,7 @@ app.config['MAIL_PASSWORD'] = 'dummy@123'
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
-app.secret_key = 'super secret key'
+app.secret_key = os.urandom(12)
 @app.route("/")
 def hello_world():
    return render_template('home.html')
