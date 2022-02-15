@@ -11,3 +11,4 @@ requests
 regex==2021.10.8
 pandas==1.3.4
 WTForms==3.0.0
+language_tool_python
