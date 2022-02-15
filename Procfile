@@ -1,1 +1,1 @@
-web: gunicorn app:copyedit
+web:gunicorn app:app
