@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+   <head>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="static\style.css" type="text/css">
+      <!-- <script>
+         var el = document.getElementById('clear');
+         el.remove(); 
+      </script> -->
+      <script type = "text/javascript" 
+         src = "{{ url_for('static', filename = 'hello.js') }}" ></script>
+
+   </head>
+   
+   <body>
+
+       <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         <a class="navbar-brand px-2" href="/">CopyEditor</a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+           <ul class="navbar-nav">
+             <li class="nav-item active">
+               <a class="nav-link" href="/">Home </a>
+             </li>
+             <li class="nav-item active">
+               <a class="nav-link" href="/rules">Rules <</a>
+             </li>
+             <li class="nav-item active">
+               <a class="nav-link" href="/edit">Edit </a>
+             </li>
+           </ul>
+         </div>
+       </nav>
+
+   
+      <div class="d-flex">
+         <table style="border: 1px solid white" class="table-bordered">
+            <tr>
+               <th id="top-row" class="col-3"> Copy-edited </th>
+               <th id="top-row" class="col-1"> Suggestions </th>
+            </tr>
+
+               <tr>
+                  <td class="col-3 text-start p-5"> 
+                     {% autoescape false %}
+                     {{ result.tags | replace("\n", "<br/>") }} 
+                     {% endautoescape %}
+                  </td>
+              
+                  <td class="col-3 align-top text-start"> 
+                  
+                     <ul>
+                     {% for i in result.suggestions %}
+                        <pre><li>{{ i | safe }}</li></pre>
+                     {% endfor %}
+                     </ul>
+
+                     <hr>
+
+                     <ul>
+                     {% for i in result.grammar %}
+                        <pre><li>{{ i | safe }}</li></pre>
+                     {% endfor %}
+                     </ul>
+                 
+
+                  </td>
+               </tr>
+
+         </table>
+      </div>
+      
+   </body>
+</html>

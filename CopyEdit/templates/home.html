@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Righteous&display=swap" rel="stylesheet">
+    <title>CopyEditor</title>
+    <script type = "text/javascript" 
+         src = "{{ url_for('static', filename = 'hello.js') }}" ></script>
+    <link rel="stylesheet" href="static\style.css" type="text/css">
+</head>
+<body>
+    <div id="loading">
+        <img id="loading-image" src="static\img\capstone.gif" alt="Loading..." />
+      </div>
+    <h1>Hey! I am CopyEditor.</h1>
+    <a href="{{ url_for('edit') }}"><img id="cap" src="static/img/capstone.gif" alt="CopyEditor" title="Click me to start!" width="200px"></a>
+    <br>
+    <br>
+ 
+    <h3>Here are some rules I follow: </h3>
+    <ul>
+        <li>If you find a capital in the middle of your sentence, unless it's a proper noun, it shouldn't be there.</li>
+        <li>The names of subjects, like math, should not be capitalized unless they are at the beginning of a sentence.</li>
+        <li>The dollar sign '$' precedes the numerical value, without any spaces between them.Forexample, $2.</li>
+        <li>The cent sign ‘¢’ comes after the number value, without any spaces. For example, 2¢.</li>
+        <li>There should be a space on either side of the minus sign '-'. For example, a - b.</li>
+        <li>There should be a space on either side of the plus sign '+'. For example, a + b.</li>
+        <li>There should be a space on either side of the multiplication sign 'x'. For example, a x b.</li>
+        <li>There shouldn't be a space on either side of a slash '/'. For example, a/b.</li>
+        <li>There should be a space on either side of the equal sign '='. For example, a = b</li>
+        <li>There should not be a space on either side of a ratio ':'. For example, a:b.</li>
+        <li>There should be no space before a colon and one space after it. For example, the number of balloons required: 5 dozen</li>
+        <li>The aforementioned rules apply within parentheses '()'.</li>
+        <li>Please refrain from adding extra exclamation marks (!) or question marks (?) for emphasis, as this is not appropriate for the text.</li>
+        <li>Be careful with using American English especially in the case of units of measurement. For example, kilometer, not kilometre.</li>
+        <li>Be consistent in the abbreviations for units of measurement. For example, it is km/h not kms/hr.</li>
+        <li>Use oxford commas. For example, I have a pen, paper and pencil. I have a pen, paper, and pencil.</li>
+        <li>When writing fractions, hyphenate the two words. For example, two-fourths.</li>
+        <li>Do not add full stops at the end of equations.</li>
+        <li>Everything except buttons on wireframes must be written in sentence case.</li>
+        <li>Buttons must be uppercase (on wireframes).Buttons must be uppercase (on wireframes).</li>
+    </ul>
+    <br>
+    <!-- Footer -->
+<footer class="page-footer font-small pt-4">
+
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left">
+  
+      <!-- Grid row -->
+      <div class="row">
+  
+        <!-- Grid column -->
+        <div>
+  
+          <!-- Content -->
+          <p id="footer">Developed and maintained by Swapnil Lonarey, Rahul Bharti and Rohan Sahni.</p>
+  
+        </div>
+        <!-- Grid column -->
+  
+      </div>
+      <!-- Grid row -->
+  
+    </div>
+    <!-- Footer Links -->
+  
+    <!-- Copyright -->
+    <div id="footer" class="footer-copyright text-center py-3">© 2022 Copyright:
+      
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
+</body>
+</html>
